@@ -10,10 +10,12 @@ export class CategoriaController{
     @HttpCode(HttpStatus.OK)
     findAll(): Promise<Categoria[]> {
         return this.categoriaService.findAll();
+        
     }
-
+    // o ":" serve para destacar que vai ser um número.
     @Get('/:id')
     @HttpCode(HttpStatus.OK)
+    // ParseIntPire serve para dizer que o nosso número é um inteiro
     findById(@Param('id', ParseIntPipe) id: number): Promise<Categoria> {
         return this.categoriaService.findById(id);
     }
