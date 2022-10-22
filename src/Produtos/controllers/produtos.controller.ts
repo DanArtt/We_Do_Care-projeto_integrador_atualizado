@@ -24,5 +24,5 @@ export class ProdutosController {
     // Retornando para o metodo de achar pelo Nome.
     @Get('/search/:nome')
     @HttpCode(HttpStatus.OK)
-    findByName(@Param('nome', ))
+    findByName(@Param('nome', )
 }
