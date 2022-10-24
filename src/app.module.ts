@@ -16,7 +16,7 @@ import { Produto } from './Produtos/entities/produtos.entity';
       password: 'root',
       database: 'we_do_care',
       entities:[Categoria, Produto],
-      synchronize: false,
+      synchronize: true,
     }),
     CategoriaModule,
     ProdutosModule

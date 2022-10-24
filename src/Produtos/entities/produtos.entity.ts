@@ -1,6 +1,6 @@
 import { IsNotEmpty } from "class-validator"
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
-
+import { Categoria } from "src/Categoria/entities/categoria.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm"
 
 
 
@@ -29,5 +29,15 @@ export class Produto {
     @IsNotEmpty()
     @Column()
     quantidade: number;
+
+
+    //Chave estrangeira de muitos para uma
+    @ManyToOne(() => Categoria, (categoria) => categoria.produto, {
+    onDelete: 'CASCADE'
+
+    })
+    categoria: Categoria;
+
+
 
 }
