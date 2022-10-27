@@ -1,5 +1,6 @@
 import { IsNotEmpty } from "class-validator"
 import { Categoria } from "src/Categoria/entities/categoria.entity";
+import { Usuario } from "src/Usuario/entities/usuario.entity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm"
 
 
@@ -33,11 +34,20 @@ export class Produto {
 
     //Chave estrangeira de muitos para uma
     @ManyToOne(() => Categoria, (categoria) => categoria.produto, {
-    onDelete: 'CASCADE'
+        onDelete: 'CASCADE'
 
     })
+
     categoria: Categoria;
 
+    @ManyToOne(() => Usuario, (usuario) => usuario.produto, {
+        onDelete: 'CASCADE'
+
+    })
+
+    usuario: Usuario;
+
+    }
 
 
-}
+
